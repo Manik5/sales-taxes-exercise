@@ -1,17 +1,23 @@
-How to Compile
+## How to Compile
 
-From a terminal run
+### From a terminal run
 
-git clone https://github.com/Manik5/sales-taxex-exercise
+```
+git clone https://github.com/Manik5/sales-taxes-exercise
+```
 
-Change the working directory with
-
+### Change the working directory with
+```
 cd sales-problems
+```
 
-How to Run
+## How to Run
 
-inside the sales-problems directory, run:
-
+### inside the sales-problems directory, run:
+```
 ruby run.rb  "nameofthefile".txt
-
-ex: ruby run.rb cart1.txt
+```
+#### example
+```
+ruby run.rb cart1.txt
+```
