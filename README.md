@@ -8,7 +8,7 @@ git clone https://github.com/Manik5/sales-taxes-exercise
 
 ### Change the working directory with
 ```
-cd sales-problems
+cd sales-taxes-exercise
 ```
 
 ## How to Run
