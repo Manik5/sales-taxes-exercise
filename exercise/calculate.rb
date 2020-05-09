@@ -14,8 +14,8 @@ class Calculate
 	end
 
 	def check_type(type)
-		elements = @items.select { |item| item[type] == true}
-		elements
+		products = @items.select { |item| item[type] == true}
+		products
 	end
 
 	def check_tax(applied_tax)
@@ -37,32 +37,32 @@ class Calculate
 
 	# sales taxes 10% ----> 0.10
 
-	def total_sales_tax(elements)
-		elements.each do | element |
-			tax_to_add = add_tax(element[:price], element[:quantity], @sales_tax)
-			element[:total] = sum_total(element[:total], tax_to_add)
+	def total_sales_tax(products)
+		products.each do | product |
+			tax_to_add = add_tax(product[:price], product[:quantity], @sales_tax)
+			product[:total] = sum_total(product[:total], tax_to_add)
 			@sum_sales_tax += tax_to_add
 		end
 	end
 
 	def apply_sales_tax
-		elements = check_type(:element)
-		total_sales_tax(elements)
+		products = check_type(:product)
+		total_sales_tax(products)
 		@sum_sales_tax
 	end
 
 	# imported taxes 5% ----> 0.05
-	def total_imported_tax(elements)
-		elements.each do | element |
-			tax_to_add = add_tax(element[:price], element[:quantity] , @imported_tax)
-			element[:total] = sum_total(element[:total], tax_to_add)
+	def total_imported_tax(products)
+		products.each do | product |
+			tax_to_add = add_tax(product[:price], product[:quantity] , @imported_tax)
+			product[:total] = sum_total(product[:total], tax_to_add)
 			@sum_imported_tax += tax_to_add
 		end
 	end
 
 		def apply_imported_tax
-			elements = @items.select { |item| item[:imported] == true}
-			sum_up = total_imported_tax(elements)
+			products = @items.select { |item| item[:imported] == true}
+			sum_up = total_imported_tax(products)
 			@sum_imported_tax
 		end
 
