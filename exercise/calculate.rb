@@ -1,3 +1,9 @@
+# The problem it's here, because on the check type method
+# it doesn't give back an array of hashes
+# so the tax of 1.5 can't be applied because it doesn't see the items
+# don't know how to fix
+
+require 'pry'
 class Calculate
 
 	attr_accessor :items, :total_taxes, :total_price
@@ -14,15 +20,17 @@ class Calculate
 	end
 
 	def check_type(type)
-		products = @items.select { |item| item[type] == true}
-		products
+		products = @items.filter { |item| item[type] == true }
+		products # it doesn't print out the array and this is the problem
 	end
+
 
 	def check_tax(applied_tax)
 		apply_tax = ((applied_tax * @round_cent).ceil / @round_cent)
-		 apply_tax
+		apply_tax
 	end
 
+	# adding the tax, multiplying the price, quantity and tax
 	def add_tax(price, quantity, tax)
 		tax_to_add = (price * quantity *tax)
 		new_tax = check_tax(tax_to_add)

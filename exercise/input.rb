@@ -1,17 +1,19 @@
+require 'pry'
+
 class Input
 	attr_accessor :input_file, :items
 
-	# transforming the txt file into an array of hashes
+
 	def initialize(folder)
 		@input_file = File.open(File.dirname(File.dirname(__FILE__)) + '/inputs/' + folder).to_a
-		 @exceptions = set_exceptions(File.dirname(File.dirname(__FILE__)) + '/exceptions.txt')
-		 @items = []
+		@exceptions = set_exceptions(File.dirname(File.dirname(__FILE__)) + '/exceptions.txt')
+		@items = []
 	end
 
 	def set_exceptions(folder)
 		exceptions = File.open(folder).to_a
-		exceptions.map! { |item| item.chomp}
-	 	exceptions
+		exceptions.map! { |item| item.chomp }
+	 	exceptions # good
 	end
 
 	def parsing
@@ -19,7 +21,6 @@ class Input
 			item= item.strip.split(/\s/)
 			check(item)
 		end
-		@items
 	end
 
 	def check(item)
@@ -32,7 +33,7 @@ class Input
 			total: calculate_total(item)
 		}
 		@items << add_item
-		 @items
+		@items
 	end
 
 	def check_quantity(item)
@@ -41,7 +42,7 @@ class Input
 
 	def check_name(item)
 		last_element = (item.index "at") - 1
-		pick = item[1..last_element].join(" ")
+		pick = item[1..last_element] * " "
 		pick
 	end
 
@@ -54,7 +55,7 @@ class Input
 
 	def verify_sales(item)
 		crosscheck = item & @exceptions
-		crosscheck = crosscheck.join(" ")
+		crosscheck = crosscheck * " "
 		crosscheck != "" ? false : true
 	end
 
