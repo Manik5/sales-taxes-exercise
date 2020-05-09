@@ -1,5 +1,5 @@
 class Calculate
-	attr_accessor :total_taxes, :total_price, :items
+	attr_accessor :items, :total_taxes, :total_price
 
 	def initialize(input_items)
 		@items = input_items
