@@ -56,7 +56,7 @@ describe "calculate" do
     bill.sum_price.should == 57.50
   end
 
-  it "should sum the default price of the items and sales tax" do
+  it "should sum the default price of the items and total tax" do
     items = [ { name: "imported bottle of chocolates", qty: 1, price: 10.00, sale: false, import: true, total: 10.00 },
               { name: "imported bottle of perfume", qty: 1, price: 47.50, sale: true, import: true, total: 47.50 }
             ]

@@ -1,5 +1,7 @@
 ## How to Compile
 
+#### (Be sure to install rspec and rake gem)
+
 ### From a terminal run
 
 ```

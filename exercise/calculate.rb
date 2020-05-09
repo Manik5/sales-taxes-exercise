@@ -1,4 +1,5 @@
 class Calculate
+
 	attr_accessor :items, :total_taxes, :total_price
 
 	def initialize(input_items)
@@ -9,7 +10,6 @@ class Calculate
 		@sum_imported_tax = 0.0
 		@total_taxes = 0.0
 		@total_price = 0.0
-		@all_tax = 0.15
 		@round_cent = 1 / 0.05
 	end
 

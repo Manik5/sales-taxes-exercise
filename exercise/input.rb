@@ -19,6 +19,7 @@ class Input
 			item= item.strip.split(/\s/)
 			check(item)
 		end
+		@items
 	end
 
 	def check(item)
@@ -58,13 +59,13 @@ class Input
 	end
 
 	def verify_imported(item)
-		verify_import = item.include? 'imported'
+		verify_import = item.include? "imported"
 		verify_import == true ? true : false
 	end
 
 	def calculate_total(item)
 		total = check_quantity(item) * check_price(item)
-		return total
+		total
 	end
 end
 
