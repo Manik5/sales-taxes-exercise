@@ -17,7 +17,12 @@ cd sales-taxes-exercise
 ```
 ruby run.rb  "nameofthefile".txt
 ```
-#### example
+#### Example
 ```
 ruby run.rb cart1.txt
+```
+
+#### To run a test from any directory
+```
+rake
 ```

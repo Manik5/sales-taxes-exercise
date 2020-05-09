@@ -54,7 +54,7 @@ class Calculate
 	# imported taxes 5% ----> 0.05
 	def total_imported_tax(elements)
 		elements.each do | element |
-			tax_to_add = add_tax(element[:price], element[:quantity], @imported_tax)
+			tax_to_add = add_tax(element[:price], element[:quantity] , @imported_tax)
 			element[:total] = sum_total(element[:total], tax_to_add)
 			@sum_imported_tax += tax_to_add
 		end
