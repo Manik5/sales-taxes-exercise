@@ -1,4 +1,4 @@
-# The problem it's here, because on the check type method
+# The problem is here, because on the check type method
 # it doesn't give back an array of hashes
 # so the tax of 1.5 can't be applied because it doesn't see the items
 # don't know how to fix
@@ -16,12 +16,20 @@ class Calculate
     @sum_imported_tax = 0.0
     @total_taxes = 0.0
     @total_price = 0.0
+    @all_tax = 0.15
     @round_cent = 1 / 0.05
   end
 
   def check_type(type)
-    products = @items.filter { |item| item[type] == true }
-    products # it doesn't print out the array and this is the problem
+    # products = @items.find_all { |item| item[type] == true }
+    # products = @items.find_all { |item| item.include? true}
+    # products = @items.select { |item| item[type] == true }
+    # products = @items.find_all { |item| item[type] == true }
+    # products = @items.find_all { |item| item[type] != false }
+    p products
+    # products
+    # it doesn't print out the array to check the true or false  and this is the problem, why??
+    # it's like the find_all method doesn't work, it doesn't recognize "true"
   end
 
 

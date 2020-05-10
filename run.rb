@@ -1,6 +1,6 @@
-require './exercise/input.rb'
-require './exercise/calculate.rb'
-require './exercise/display.rb'
+require './exercise/input'
+require './exercise/calculate'
+require './exercise/display'
 
 class Run
 

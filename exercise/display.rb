@@ -27,7 +27,7 @@ class Display
   end
 
   def show
-     puts "--------------------------------"
+    puts "--------------------------------"
     puts "\n"
     puts "Here is the bill: "
     puts "\n"
