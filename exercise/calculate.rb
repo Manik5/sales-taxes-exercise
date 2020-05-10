@@ -21,11 +21,11 @@ class Calculate
   end
 
   def check_type(type)
-    # products = @items.find_all { |item| item[type] == true }
+    products = @items.find_all { |item| item[type] == true }
+    # products = @items.find_all { |item| item[type] != false }
     # products = @items.find_all { |item| item.include? true}
     # products = @items.select { |item| item[type] == true }
-    # products = @items.find_all { |item| item[type] == true }
-    # products = @items.find_all { |item| item[type] != false }
+    # products = @items.filter { |item| item[type] == true }
     p products
     # products
     # it doesn't print out the array to check the true or false  and this is the problem, why??
